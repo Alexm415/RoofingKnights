@@ -1,0 +1,232 @@
+:root {
+  --blue: #3a8fd8;
+  --blue-bright: #4e9fde;
+  --blue-deep: #2a5f8f;
+  --blue-ink: #16324f;
+  --navy: #0e1c2c;
+  --black: #111111;
+  --ink: #1a1a1a;
+  --muted: #5c6370;
+  --steel: #8a9199;
+  --line: #d8dee6;
+  --paper: #f4f7fb;
+  --white: #ffffff;
+  --whatsapp: #128c47;
+  --whatsapp-dark: #0b6b35;
+  --warn: #8a5a10;
+  --warn-bg: #fff6e5;
+  --radius: 14px;
+  --font-display: 'Oswald', 'Arial Narrow', sans-serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', system-ui, sans-serif;
+  --header-h: 72px;
+  --sticky-h: 0px;
+  --shadow: 0 10px 30px rgba(14, 28, 44, 0.12);
+  color-scheme: light;
+}
+
+@media (max-width: 860px) {
+  :root {
+    --sticky-h: 68px;
+    --header-h: 64px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: calc(var(--sticky-h) + env(safe-area-inset-bottom));
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--blue-deep);
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  color: var(--blue);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  color: var(--navy);
+  margin: 0 0 0.6em;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  background: var(--black);
+  color: var(--white);
+  padding: 0.6rem 1rem;
+  z-index: 200;
+  border-radius: 8px;
+}
+
+.skip-link:focus {
+  top: 1rem;
+  color: var(--white);
+}
+
+.wrap {
+  width: min(1120px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.icon {
+  width: 1.15em;
+  height: 1.15em;
+  flex: 0 0 auto;
+  display: block;
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.82rem;
+  color: var(--blue);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.lead {
+  font-size: 1.15rem;
+  color: var(--muted);
+  max-width: 42rem;
+}
+
+.caption {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0.5rem 0 0;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.section-alt {
+  background: var(--paper);
+}
+
+.section-head {
+  margin-bottom: 2rem;
+}
+
+.section-cta {
+  margin: 2rem 0 0;
+}
+
+.page-hero {
+  background:
+    linear-gradient(180deg, var(--navy) 0%, var(--blue-ink) 100%);
+  color: var(--white);
+  padding: 3.2rem 0 2.6rem;
+}
+
+.page-hero h1,
+.page-hero .lead {
+  color: var(--white);
+}
+
+.page-hero .lead {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.page-hero .trust-badges {
+  margin-top: 1.5rem;
+}
+
+.page-hero .trust-badge {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: var(--white);
+}
+
+.page-hero .trust-label {
+  color: rgba(255, 255, 255, 0.75);
+}
